@@ -99,6 +99,15 @@ nav a:hover {
 .social-icon {
     width: 28px;
     height: 28px;
+    color: inherit;
+    fill: currentColor;
+}
+.linkedin-link {
+    color: #ffffff;
+}
+.linkedin-link .social-icon {
+    color: #ffffff;
+    fill: #ffffff;
 }
 .music-player {
     position: absolute;
