@@ -1,22 +1,23 @@
 // --- MAIN DOCUMENT READY LISTENER ---
 document.addEventListener('DOMContentLoaded', function () {
 
-    // --- VANTA.JS HALO ANIMATION ---
-    // Make sure to include three.js and vanta.halo.min.js in your HTML
+    // --- VANTA.JS NET ANIMATION ---
+    // Make sure to include three.js and vanta.net.min.js in your HTML
     if (window.VANTA) {
-        VANTA.HALO({
+        VANTA.NET({
             el: "header",
             mouseControls: true,
             touchControls: true,
             gyroControls: false,
             minHeight: 200.00,
             minWidth: 200.00,
-            baseColor: 0x0d1117, // Corresponds to CSS var(--bg-color)
-            backgroundColor: 0x0d1117, // Corresponds to CSS var(--bg-color)
-            amplitudeFactor: 1.20,
-            xOffset: 0.20,
-            yOffset: 0.10,
-            size: 1.20
+            scale: 1.0,
+            scaleMobile: 1.0,
+            color: 0x0066cc,
+            backgroundColor: 0x0d1117,
+            points: 10.00,
+            maxDistance: 24.00,
+            spacing: 18.00
         });
     }
 
