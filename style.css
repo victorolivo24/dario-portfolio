@@ -10,8 +10,8 @@ Modern Portfolio Stylesheet (Corrected)
     --bg-color: #0d1117; /* GitHub Dark Background */
     --primary-card-color: #161b22; /* GitHub Dark Card */
     --border-color: #30363d; /* GitHub Dark Border */
-    --accent-gradient: linear-gradient(45deg, #238636, #38a54a); /* Green Accent */
-    --accent-color-primary: #2ea043;
+    --accent-gradient: linear-gradient(45deg, #0066cc, #0066cc); /* Green Accent */
+    --accent-color-primary: #0066cc;
     --text-primary: #c9d1d9; /* Main text */
     --text-secondary: #8b949e; /* Lighter grey for subtext */
     --text-highlight: #ffffff; /* Pure white for headers */
@@ -134,7 +134,7 @@ nav a:hover {
     font-size: 1rem;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    background: #2ea043;
+    background: #0066cc;
     color: white;
     border: none;
     border-radius: 5px;
@@ -303,7 +303,7 @@ h2::after {
 .experience-card:hover {
     transform: translateY(-6px);
     border-color: var(--accent-color-primary);
-    box-shadow: 0 18px 40px rgba(46, 160, 67, 0.25);
+    box-shadow: 0 18px 40px rgba(0, 102, 204, 0.25);
 }
 .experience-tag {
     display: inline-block;
@@ -369,7 +369,7 @@ h2::after {
     color: var(--text-secondary);
 }
 .project .award {
-    background: rgba(46, 160, 67, 0.15);
+    background: rgba(0, 102, 204, 0.15);
     border: 1px solid var(--accent-color-primary);
     color: var(--text-highlight);
     padding: 0.5rem 1rem;
@@ -470,7 +470,7 @@ h2::after {
 }
 .button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(46, 160, 67, 0.4);
+    box-shadow: 0 0 20px rgba(0, 102, 204, 0.4);
 }
 
 /* --- Footer & Scroll Button --- */
