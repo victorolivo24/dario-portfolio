@@ -275,6 +275,69 @@ h2::after {
     color: var(--accent-color-primary);
 }
 
+/* --- Experience Grid (non-sequential layout) --- */
+.experience-showcase .experience-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+    margin-top: 3rem;
+}
+.experience-card {
+    background-color: var(--primary-card-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-main);
+    padding: 2rem;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+}
+.experience-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-color-primary);
+    box-shadow: 0 18px 40px rgba(46, 160, 67, 0.25);
+}
+.experience-tag {
+    display: inline-block;
+    padding: 0.2rem 0.75rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--accent-color-primary);
+    margin-bottom: 0.75rem;
+}
+.experience-tag.subtle {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-secondary);
+}
+.experience-card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+}
+.experience-meta {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+.experience-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 1rem 0 0;
+}
+.experience-card ul li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.6rem;
+    color: var(--text-secondary);
+}
+.experience-card ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--accent-color-primary);
+}
+
 /* --- Project Cards --- */
 .project {
     background-color: var(--primary-card-color);
