@@ -347,6 +347,10 @@ h2::after {
     border: none;
     border-radius: 0;
 }
+.experience-card .org-logo-large {
+    width: 132px;
+    height: 132px;
+}
 .timeline-content h4 {
     margin: 0.25rem 0 0.75rem 0;
     color: var(--text-secondary);
@@ -392,7 +396,7 @@ h2::after {
     box-shadow: 0 22px 48px rgba(0, 102, 204, 0.3);
 }
 .experience-card .card-header {
-    padding-right: 135px;
+    padding-right: 160px;
 }
 .experience-tag {
     display: inline-block;
