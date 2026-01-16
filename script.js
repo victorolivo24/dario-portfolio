@@ -3,9 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- VANTA.JS NET ANIMATION ---
     // Make sure to include three.js and vanta.net.min.js in your HTML
-    if (window.VANTA) {
+    const headerEl = document.querySelector('header');
+    if (window.VANTA && headerEl) {
         VANTA.NET({
-            el: "header",
+            el: headerEl,
             mouseControls: true,
             touchControls: true,
             gyroControls: false,
