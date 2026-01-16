@@ -89,7 +89,11 @@ header p {
 
 /* --- Navigation Bar --- */
 nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
     padding: 1.25rem 0;
+    background-color: var(--primary-card-color);
     border-bottom: 1px solid var(--border-color);
     display: flex;
     justify-content: center;
