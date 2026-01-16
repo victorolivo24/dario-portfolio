@@ -12,10 +12,13 @@
 
 <body class="page-experience">
     <nav>
-        <a href="home.html">Home</a>
-        <a href="experience.html" class="active">Experience</a>
-        <a href="education.html">Education</a>
-        <a href="projects.html">Personal Projects</a>
+        <div class="nav-links">
+            <a href="home.html">Home</a>
+            <a href="experience.html" class="active">Experience</a>
+            <a href="education.html">Education</a>
+            <a href="projects.html">Personal Projects</a>
+            <a class="nav-resume" href="MartinezDarioResume.pdf" target="_blank">View Resume</a>
+        </div>
     </nav>
 
     <main>
@@ -24,51 +27,77 @@
             <div class="experience-grid">
                 <article class="experience-card">
                     <div class="experience-tag">Equity Capital Markets • TMT</div>
-                    <h3>Wells Fargo Securities</h3>
-                    <p class="experience-meta">Investment Banking Summer Analyst — ECM TMT • New York, NY</p>
+                    <div class="card-header">
+                        <img src="images/Wells_Fargo-Logo.wine.png" alt="Wells Fargo logo" class="org-logo" />
+                        <div>
+                            <h3>Wells Fargo Securities</h3>
+                            <p class="experience-meta">Investment Banking Summer Analyst, ECM TMT Group • New York, New York</p>
+                        </div>
+                    </div>
                     <ul>
-                        <li>Built shareholder momentum and capital markets dashboards by blending FactSet, AlphaSense,
-                            Dealogic, PitchBook, and RenCap data in near real time.</li>
-                        <li>Drafted ECC memos and executive slides used in senior coverage briefings and client
-                            meetings.</li>
-                        <li>Led a pricing war-room simulation comparing comp / intrinsic outputs to the actual
-                            transaction result.</li>
+                        <li>Supported execution of the Figma IPO and Mobileye follow-on by drafting ECC memos, analyzing
+                            company financials, and preparing slides; partnered with coverage to assess valuation
+                            drivers</li>
+                        <li>Conducted market and company research using FactSet, AlphaSense, Dealogic, PitchBook, and
+                            RenCap to produce shareholder momentum analyses, peer comps, and market backdrop updates
+                            that informed strategy and client recommendations</li>
+                        <li>Completed summer valuation project, conducting comps and intrinsic analyses to estimate
+                            firm value; presented findings to senior bankers and benchmarked against actual
+                            transaction outcomes</li>
                     </ul>
                 </article>
 
                 <article class="experience-card">
                     <div class="experience-tag subtle">Student-Managed Capital</div>
-                    <h3>University of Miami SMIF</h3>
-                    <p class="experience-meta">Analyst — Technology Team • Coral Gables, FL</p>
+                    <div class="card-header">
+                        <img src="images/University-of-miami-patti-and-allan-herbert-business-school-logo.png"
+                            alt="University of Miami Herbert Business School logo" class="org-logo" />
+                        <div>
+                            <h3>University of Miami SMIF</h3>
+                            <p class="experience-meta">Analyst, Technology Team • Coral Gables, Florida</p>
+                        </div>
+                    </div>
                     <ul>
-                        <li>Drive DCF / comps models for enterprise SaaS and semiconductor holdings inside a $2M long-only
-                            portfolio.</li>
-                        <li>Author tech watchlists that tie product catalysts, macro signals, and quant screens into
-                            weekly briefs.</li>
+                        <li>Perform comparable company and DCF valuations to assess intrinsic value and transaction
+                            multiples for assigned equities, formulating buy/sell/hold recommendations</li>
+                        <li>Partner with team to manage $2 million long-only equity and ETF portfolio, presenting
+                            findings to faculty and peers to drive real-capital allocation decisions, technology
+                            comprises ~47% of portfolio</li>
                     </ul>
                 </article>
 
                 <article class="experience-card">
                     <div class="experience-tag subtle">Tech M&A Advisory</div>
-                    <h3>Arcadia Capital</h3>
-                    <p class="experience-meta">Investment Banking Fall Analyst — Technology M&A • Miami, FL</p>
+                    <div class="card-header">
+                        <img src="images/arcadiacapitallog.webp" alt="Arcadia Capital logo" class="org-logo" />
+                        <div>
+                            <h3>Arcadia Capital</h3>
+                            <p class="experience-meta">Investment Banking Fall Analyst, Technology M&amp;A • Miami, Florida</p>
+                        </div>
+                    </div>
                     <ul>
-                        <li>Partnered with VP/Associate teams on sell-side processes, building CIMs, buyer lists, and
-                            valuation models.</li>
-                        <li>Coordinated diligence trackers and thematic deep dives across infrastructure and vertical
-                            software buyers.</li>
+                        <li>Collaborated directly with bankers on live technology M&amp;A transactions, contributed to
+                            valuation analysis, buyer targeting, and preparation of CIMs and investment memos</li>
+                        <li>Conducted industry and company research to support strategic advisory initiatives across
+                            the software ecosystem, strengthened analytical acumen and deal exposure within the tech
+                            M&amp;A space</li>
                     </ul>
                 </article>
 
                 <article class="experience-card">
                     <div class="experience-tag subtle">Student Leadership</div>
-                    <h3>Century Fund</h3>
-                    <p class="experience-meta">Director — Industrials Sector Team • Coral Gables, FL</p>
+                    <div class="card-header">
+                        <img src="images/century_fund_logo.jpg" alt="Century Fund logo" class="org-logo" />
+                        <div>
+                            <h3>Century Fund</h3>
+                            <p class="experience-meta">Director of Industrials Sector Team • Coral Gables, Florida</p>
+                        </div>
+                    </div>
                     <ul>
-                        <li>Mentored 10 analysts, teaching an eight-hour fundamentals + DCF intensive for new cohort
-                            members.</li>
-                        <li>Co-built an ESG-aligned allocation that outperformed the S&P 500, closing the semester at ~7%
-                            overall returns and 18% within Industrials.</li>
+                        <li>Directed team of 10 analysts in sector research, asset evaluation, investment strategy and
+                            teach eighthour financial statement and DCF modelling course to incoming freshmen members</li>
+                        <li>Contributed to creation of ESG investment portfolio, outpaced S&amp;P 500 for large portion
+                            of semester, closing at ~7% returns for portfolio overall and 18% for industrials sector</li>
                     </ul>
                 </article>
             </div>
@@ -86,8 +115,8 @@
 
     <button id="scroll-to-top" title="Go to top">↑</button>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
     <script src="script.js"></script>
 </body>
 

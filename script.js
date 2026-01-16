@@ -1,11 +1,11 @@
 // --- MAIN DOCUMENT READY LISTENER ---
 document.addEventListener('DOMContentLoaded', function () {
 
-    // --- VANTA.JS NET ANIMATION ---
-    // Make sure to include three.js and vanta.net.min.js in your HTML
+    // --- VANTA.JS TOPOLOGY ANIMATION ---
+    // Make sure to include p5.min.js and vanta.topology.min.js in your HTML
     const headerEl = document.querySelector('header');
     if (window.VANTA && headerEl) {
-        VANTA.NET({
+        VANTA.TOPOLOGY({
             el: headerEl,
             mouseControls: true,
             touchControls: true,
@@ -14,11 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
             minWidth: 200.00,
             scale: 1.0,
             scaleMobile: 1.0,
-            color: 0x0066cc,
-            backgroundColor: 0x0d1117,
-            points: 10.00,
-            maxDistance: 24.00,
-            spacing: 18.00
+            color: 0xc0ff,
+            backgroundColor: 0x000000
         });
     }
 
