@@ -627,6 +627,12 @@ h2::after {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(0, 102, 204, 0.4);
 }
+.button-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
 
 /* --- Footer & Scroll Button --- */
 footer {
