@@ -1,0 +1,7 @@
+{
+    "functions": {
+        "api/request-resume.js": {
+            "includeFiles": "api/_resume/**"
+        }
+    }
+}

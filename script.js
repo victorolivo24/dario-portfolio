@@ -96,4 +96,54 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // --- REQUEST RESUME FORM ---
+    const resumeForm = document.getElementById('resume-form');
+    if (resumeForm) {
+        const statusEl = document.getElementById('resume-form-status');
+        const submitBtn = document.getElementById('resume-submit-btn');
+
+        resumeForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const company = document.getElementById('company').value; // honeypot
+
+            statusEl.textContent = '';
+            statusEl.className = 'form-status';
+
+            if (!name || !email) {
+                statusEl.textContent = 'Please enter both your name and email.';
+                statusEl.classList.add('form-status-error');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            try {
+                const response = await fetch('/api/request-resume', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, company }),
+                });
+                const data = await response.json().catch(() => ({}));
+
+                if (!response.ok) {
+                    throw new Error(data.error || 'Something went wrong. Please try again.');
+                }
+
+                resumeForm.reset();
+                statusEl.textContent = `Done! I've sent the resume to ${email}.`;
+                statusEl.classList.add('form-status-success');
+            } catch (err) {
+                statusEl.textContent = err.message || 'Something went wrong. Please try again, or email dario3martinez@gmail.com directly.';
+                statusEl.classList.add('form-status-error');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Me the Resume';
+            }
+        });
+    }
+
 });
