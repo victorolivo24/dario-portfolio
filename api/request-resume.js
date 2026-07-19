@@ -88,21 +88,38 @@ module.exports = async function handler(req, res) {
 
     // Notification + sheet log are best-effort — a failure here shouldn't
     // fail the response since the requester already has their resume.
+    // Both are awaited (via allSettled) because Vercel can freeze the
+    // function's execution environment as soon as the response is sent,
+    // which would otherwise cut off any un-awaited background requests.
     const timestamp = new Date().toISOString();
 
-    sendResendEmail(RESEND_API_KEY, {
+    const notifyPromise = sendResendEmail(RESEND_API_KEY, {
         from: `Portfolio Resume Requests <${FROM_EMAIL}>`,
         to: [NOTIFY_EMAIL],
         subject: `Resume requested by ${cleanName}`,
         html: `<p><strong>${escapeHtml(cleanName)}</strong> requested your resume.</p><p>Email: ${escapeHtml(cleanEmail)}</p><p>Time: ${timestamp}</p>`,
-    }).catch((err) => console.error('request-resume: notify email failed', err));
+    });
 
-    if (SHEET_WEBAPP_URL) {
-        fetch(SHEET_WEBAPP_URL, {
+    const sheetPromise = SHEET_WEBAPP_URL
+        ? fetch(SHEET_WEBAPP_URL, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name: cleanName, email: cleanEmail, timestamp }),
-        }).catch((err) => console.error('request-resume: sheet log failed', err));
+        }).then(async (r) => {
+            if (!r.ok) {
+                const errText = await r.text().catch(() => '');
+                throw new Error(`Sheet webhook returned ${r.status}: ${errText}`);
+            }
+            return r;
+        })
+        : Promise.resolve(null);
+
+    const [notifyResult, sheetResult] = await Promise.allSettled([notifyPromise, sheetPromise]);
+    if (notifyResult.status === 'rejected') {
+        console.error('request-resume: notify email failed', notifyResult.reason);
+    }
+    if (sheetResult.status === 'rejected') {
+        console.error('request-resume: sheet log failed', sheetResult.reason);
     }
 
     return res.status(200).json({ ok: true });
